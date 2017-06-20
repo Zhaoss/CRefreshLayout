@@ -11,6 +11,7 @@ import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -54,6 +55,14 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
         mNestedScrollingParentHelper = new NestedScrollingParentHelper(this);
         mNestedScrollingChildHelper = new NestedScrollingChildHelper(this);
+
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+
+        setRefreshLayout(false);
     }
 
     @Override
@@ -61,16 +70,7 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
         super.onFinishInflate();
 
         mTarget = getChildAt(0);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-
-        if(mRefreshView == null){
-            CRefreshManager.bindView(getContext(), this);
-        }
-        setRefreshLayout(false);
+        bindRefreshView(new RefreshView(getContext()));
     }
 
     /**
@@ -136,13 +136,16 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
     }
 
     private void setRefreshLayout(boolean isOpen){
-        ViewGroup.LayoutParams layoutParams = mRefreshView.getLayoutParams();
-        if(isOpen){
-            mRefreshView.setY(0);
-            mTarget.setY(layoutParams.height);
-        }else{
-            mRefreshView.setY(-layoutParams.height);
-            mTarget.setY(0);
+
+        if(mTarget!=null && mRefreshView!=null) {
+            ViewGroup.LayoutParams layoutParams = mRefreshView.getLayoutParams();
+            if (isOpen) {
+                mRefreshView.setY(0);
+                mTarget.setY(layoutParams.height);
+            } else {
+                mRefreshView.setY(-layoutParams.height);
+                mTarget.setY(0);
+            }
         }
     }
 
@@ -158,6 +161,9 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
         }
         this.mRefreshView = refreshView;
         addView(refreshView);
+
+        refreshY = mRefreshView.getLayoutParams().height;
+        setRefreshLayout(false);
     }
 
     /**
@@ -292,6 +298,8 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     private void scroll(float slideY){
 
+        Log.i("Log.i", "dy: "+mRefreshView.getY());
+
         float y1 = mRefreshView.getY() + slideY;
         float y2 = mTarget.getY() + slideY;
 
@@ -310,24 +318,22 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
     @Override
     public void onStopNestedScroll(View target){
 
+        Log.i("Log.i", "target: "+target.hashCode());
         mNestedScrollingParentHelper.onStopNestedScroll(target);
 
-        if(refreshY == 0) {
-            refreshY = mRefreshView.getHeight();
-        }
-
-        if(!mRefreshing) {
-            if(mTarget.getY() >= refreshY){
-                mRefreshing = true;
-                setRefreshLayout(true);
-                onRefresh();
-            }else{
-                closeAnim();
-                mRefreshing = false;
+        if(mTarget.getY() > 0) {
+            if (!mRefreshing) {
+                if (mTarget.getY() >= refreshY) {
+                    mRefreshing = true;
+                    setRefreshLayout(true);
+                    onRefresh();
+                } else {
+                    closeAnim();
+                    mRefreshing = false;
+                }
             }
+            if(onCustomRefreshListener != null) onCustomRefreshListener.onUp(mRefreshView, (int)mTarget.getY());
         }
-
-        if(onCustomRefreshListener != null) onCustomRefreshListener.onUp(mRefreshView, (int)mTarget.getY());
     }
 
     @Override
@@ -351,6 +357,7 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
+        Log.i("Log.i", "onStartNestedScroll");
         if(onCustomRefreshListener != null) onCustomRefreshListener.onStart(mRefreshView);
         return mRefreshState;
     }
@@ -374,12 +381,14 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     @Override
     public boolean startNestedScroll(int axes) {
+        Log.i("Log.i", "startNestedScroll");
         return mNestedScrollingChildHelper.startNestedScroll(axes);
     }
 
     @Override
     public void stopNestedScroll() {
         mNestedScrollingChildHelper.stopNestedScroll();
+        Log.i("Log.i", "stopNestedScroll");
     }
 
     @Override

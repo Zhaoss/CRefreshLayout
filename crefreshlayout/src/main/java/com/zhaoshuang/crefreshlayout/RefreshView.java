@@ -68,7 +68,7 @@ public class RefreshView extends CRefreshView {
     /**
      * 关闭刷新动画
      */
-    public void stopAnim(final CRefreshView.OnAnimationListener animationListener){
+    public void stopAnim(final OnAnimationListener animationListener){
 
         textView.setText("✔");
         textView.clearAnimation();
