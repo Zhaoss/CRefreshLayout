@@ -11,7 +11,6 @@ import android.support.v4.view.NestedScrollingParent;
 import android.support.v4.view.NestedScrollingParentHelper;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -298,8 +297,6 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     private void scroll(float slideY){
 
-        Log.i("Log.i", "dy: "+mRefreshView.getY());
-
         float y1 = mRefreshView.getY() + slideY;
         float y2 = mTarget.getY() + slideY;
 
@@ -318,7 +315,6 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
     @Override
     public void onStopNestedScroll(View target){
 
-        Log.i("Log.i", "target: "+target.hashCode());
         mNestedScrollingParentHelper.onStopNestedScroll(target);
 
         if(mTarget.getY() > 0) {
@@ -357,7 +353,6 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     @Override
     public boolean onStartNestedScroll(View child, View target, int nestedScrollAxes) {
-        Log.i("Log.i", "onStartNestedScroll");
         if(onCustomRefreshListener != null) onCustomRefreshListener.onStart(mRefreshView);
         return mRefreshState;
     }
@@ -381,14 +376,12 @@ public class CRefreshLayout extends FrameLayout implements NestedScrollingParent
 
     @Override
     public boolean startNestedScroll(int axes) {
-        Log.i("Log.i", "startNestedScroll");
         return mNestedScrollingChildHelper.startNestedScroll(axes);
     }
 
     @Override
     public void stopNestedScroll() {
         mNestedScrollingChildHelper.stopNestedScroll();
-        Log.i("Log.i", "stopNestedScroll");
     }
 
     @Override

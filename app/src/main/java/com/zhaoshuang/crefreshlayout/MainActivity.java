@@ -1,4 +1,4 @@
-package com.zhaoshuang.crefreshlayoutdemo;
+package com.zhaoshuang.crefreshlayout;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -7,8 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
-
-import com.zhaoshuang.crefreshlayout.CRefreshLayout;
 
 public class MainActivity extends AppCompatActivity {
 
