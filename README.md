@@ -1,5 +1,5 @@
 # CRefreshLayout
-**C = custom(自定义)   
+**C = Custom(自定义)   
 CRefreshLayout = 可自定义的下拉刷新框架**
 * * *
 <br /> 
