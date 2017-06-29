@@ -1,7 +1,9 @@
 # CRefreshLayout
 **C = Custom(自定义)   
 CRefreshLayout = 可自定义的下拉刷新框架**
+
 <img src='http://i2.kiimg.com/586922/9f9e624093ebdd49.gif'>
+
 * * *
 <br /> 
 
