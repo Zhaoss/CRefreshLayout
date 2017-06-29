@@ -25,7 +25,7 @@ dependencies {
 <br /> 
    
 ## 如何在项目中使用:
-使用方法和SwipeRefreshLayout完全一致
+**使用方法和SwipeRefreshLayout完全一致**
 ```
 //在布局文件中
 <com.zhaoshuang.crefreshlayout.CRefreshLayout
