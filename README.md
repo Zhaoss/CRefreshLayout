@@ -5,7 +5,7 @@ CRefreshLayout = 可自定义的下拉刷新框架**
 <br /> 
    
 ## 如何导入到项目中:
-**1.使用jitpack方式** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
+**1. 使用jitpack方式** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
 ```
 //在你的project级build.gradle添加
 allprojects {
@@ -21,8 +21,9 @@ dependencies {
 }
 ```
 <br /> 
-**2.下载源码后, 将crefreshlayout文件夹作为modle导入进来**
-* * *   
+**2. 下载源码后, 将crefreshlayout文件夹作为modle导入进来**
+<br /> 
+* * *
 <br /> 
    
 ## 如何在项目中使用:
