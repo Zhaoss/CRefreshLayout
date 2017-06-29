@@ -1,10 +1,11 @@
 # CRefreshLayout
-C = custom(自定义)   
-CRefreshLayout = 可自定义的下拉刷新框架
+**C = custom(自定义)   
+CRefreshLayout = 可自定义的下拉刷新框架**
 * * *
+<br /> 
    
 ## 如何导入到项目中:
-### 1: [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
+**1:** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
 ```
 //在你的project级build.gradle添加
 allprojects {
@@ -19,9 +20,9 @@ dependencies {
     compile 'com.github.chenBingX:SuperTextView:v1.1'
 }
 ```
-### 2: 下载源码后, 将crefreshlayout文件夹作为modle导入进来.
+**2:** 下载源码后, 将crefreshlayout文件夹作为modle导入进来.
 * * *   
-   
+<br /> 
    
 ## 如何在项目中使用:
 使用方法和SwipeRefreshLayout完全一致
@@ -47,8 +48,7 @@ cRefreshLayout.setOnRefreshListener(new CRefreshLayout.OnRefreshListener() {
 });
 ```
 * * *   
-   
-   
+<br />  
   
 ## 进阶使用, 自定义刷新布局
 ```
@@ -75,7 +75,7 @@ cRefreshLayout.setOnCustomRefreshListener(new CRefreshLayout.OnCustomRefreshList
 });
 ```
 * * *   
-   
+<br />  
      
 ## API
 ```
@@ -100,8 +100,8 @@ setRefreshY(int refreshY)
 //设置是否响应刷新操作
 setRefreshState(boolean mRefreshState)
 ```
+* * *   
+<br /> 
 
-
-
-# 如果此项目对你有帮助, 可以star一下, 如果有bug 欢迎lssues, 代码定期维护, 也会添加新的功能
+### 如果此项目对你有帮助, 可以star一下, 如果有bug 欢迎lssues, 代码定期维护, 也会添加新的功能
 
