@@ -19,10 +19,9 @@ allprojects {
 dependencies {
     compile 'com.github.chenBingX:SuperTextView:v1.1'
 }
-```
-<br /> 
+```   
+   
 **2. 下载源码后, 将crefreshlayout文件夹作为modle导入进来**
-<br /> 
 * * *
 <br /> 
    
