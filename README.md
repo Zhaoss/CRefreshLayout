@@ -1,9 +1,8 @@
 # CRefreshLayout
-C = custom(自定义)
+C = custom(自定义)   
 CRefreshLayout = 可自定义的下拉刷新框架
-
-
-
+* * *
+   
 ## 如何导入到项目中:
 ### 1: [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
 ```
@@ -21,9 +20,9 @@ dependencies {
 }
 ```
 ### 2: 下载源码后, 将crefreshlayout文件夹作为modle导入进来.
-
-
-
+* * *   
+   
+   
 ## 如何在项目中使用:
 使用方法和SwipeRefreshLayout完全一致
 ```
@@ -47,9 +46,10 @@ cRefreshLayout.setOnRefreshListener(new CRefreshLayout.OnRefreshListener() {
     }
 });
 ```
-
-
-
+* * *   
+   
+   
+  
 ## 进阶使用, 自定义刷新布局
 ```
 //传入自定义view
@@ -74,6 +74,9 @@ cRefreshLayout.setOnCustomRefreshListener(new CRefreshLayout.OnCustomRefreshList
     }
 });
 ```
+* * *   
+   
+     
 ## API
 ```
 //设置刷新状态
