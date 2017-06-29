@@ -1,6 +1,6 @@
 # CRefreshLayout
-## C = custom(自定义)
-## CRefreshLayout = 可自定义的下拉刷新框架
+C = custom(自定义)
+CRefreshLayout = 可自定义的下拉刷新框架
 
 
 
@@ -100,5 +100,5 @@ setRefreshState(boolean mRefreshState)
 
 
 
-## 如果此项目对你有帮助, 可以star一下, 如果有bug 欢迎lssues, 代码定期维护, 也会添加新的功能
+# 如果此项目对你有帮助, 可以star一下, 如果有bug 欢迎lssues, 代码定期维护, 也会添加新的功能
 
