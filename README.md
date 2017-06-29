@@ -1,6 +1,6 @@
 # CRefreshLayout
-## C = custom(自定义)
-## CRefreshLayout = 可自定义的下拉刷新框架
+C = custom(自定义)
+CRefreshLayout = 可自定义的下拉刷新框架
 
 ## 如何导入
 1:
