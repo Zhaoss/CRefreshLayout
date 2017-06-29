@@ -1,8 +1,10 @@
 # CRefreshLayout
 **C = Custom(自定义)   
 CRefreshLayout = 可自定义的下拉刷新框架**
+
+<img src='http://i2.kiimg.com/586922/9f9e624093ebdd49.gif'>
+
 * * *
-<br /> 
 ## 如何导入到项目中:
 **1. 使用jitpack方式** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
 ```
