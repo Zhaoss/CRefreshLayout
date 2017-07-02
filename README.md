@@ -7,6 +7,8 @@ CRefreshLayout = 可自定义的下拉刷新框架**
 * * *
 <br /> 
 
+##v2.0新增自定义上拉加载框架
+
 ## 如何导入到项目中:
 **1. 使用jitpack方式** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
 ```
@@ -56,6 +58,7 @@ cRefreshLayout.setOnRefreshListener(new CRefreshLayout.OnRefreshListener() {
   
 ## 进阶使用, 自定义刷新布局
 ```
+------------------自定义下拉刷新布局-------------------
 //传入自定义view
 cRefreshLayout.bindRefreshView(view);
 //监听下拉事件
@@ -77,12 +80,33 @@ cRefreshLayout.setOnCustomRefreshListener(new CRefreshLayout.OnCustomRefreshList
         //触发刷新, 此回调有可能和onUp()同时被调用
     }
 });
+
+------------------自定义上拉加载布局-------------------
+//绑定loadView
+public void bindLoadView(View loadView)
+//设置上拉加载控件的生命周期监听
+cRefreshLayout.setOnCustomLoadListener(new CRefreshLayout.OnCustomLoadListener() {
+    //开始上拉加载
+    public void onStart(View loadView)
+    //上拉拖拽中
+    //@param dy 本次移动距离
+    //@param current 已经拖拽距离
+    //@param max 总可拖拽距离
+    public void onMove(View loadView, int dy, int current, int max)
+    //手势抬起
+    //@param currentY 已经拖拽距离
+    public void onUp(View loadView, int currentY)
+    //触发加载更多
+    public void onLoad(View loadView)
+});
 ```
 * * *   
 <br />  
      
 ## API
 ```
+
+------------------下拉刷新api--------------------
 //设置刷新状态
 setRefreshing(boolean mRefreshing)
 
@@ -103,6 +127,22 @@ setRefreshY(int refreshY)
 
 //设置是否响应刷新操作
 setRefreshState(boolean mRefreshState)
+
+------------------上拉加载api--------------------
+//判断是否加载中
+public boolean isLoading()
+
+//设置上拉加载触发点, 上拉距离超过此值, 即满足加载条件
+//@param loadY 默认值为加载控件的高度
+public void setLoadY(int loadY)
+
+//限制上拉加载时最大拖拽距离
+//@param max 值<0 表示不限制拖拽距离
+public void setLoadMaxScroll(int max)
+
+//设置加载状态
+public void setLoading(boolean loading)
+
 ```
 * * *   
 <br /> 
