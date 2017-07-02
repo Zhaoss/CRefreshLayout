@@ -7,7 +7,8 @@ CRefreshLayout = 可自定义的下拉刷新框架**
 * * *
 <br /> 
 
-##v2.0新增自定义上拉加载框架
+## v2.0新增自定义上拉加载框架
+<br /> 
 
 ## 如何导入到项目中:
 **1. 使用jitpack方式** [![](https://jitpack.io/v/Zhaoss/CRefreshLayout.svg)](https://jitpack.io/#Zhaoss/CRefreshLayout)
