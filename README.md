@@ -23,7 +23,7 @@ allprojects {
 
 //在你的module级build.gradle添加
 dependencies {
-    compile 'com.github.chenBingX:SuperTextView:v1.1'
+    compile 'com.github.chenBingX:SuperTextView:v2.0'
 }
 ```   
    
