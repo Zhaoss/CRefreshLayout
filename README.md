@@ -32,7 +32,7 @@ dependencies {
 <br /> 
    
 ## 如何在项目中使用:
-**使用方法和SwipeRefreshLayout完全一致**
+**使用方法和SwipeRefreshLayout完全一致(默认实现一套下拉刷新动画, 可直接使用)**
 ```
 //在布局文件中
 <com.zhaoshuang.crefreshlayout.CRefreshLayout
